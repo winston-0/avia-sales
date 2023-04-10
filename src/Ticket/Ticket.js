@@ -1,16 +1,16 @@
 import React from "react";
 
-export default Ticket = () => {
+const Ticket = () => {
     return (
         <li className="ticket">
             <div className="ticket__head">
-                <span className="ticket__head-price"></span>
+                <span className="ticket__head-price">13 400 Р</span>
                     <div className="ticket__head-logo">
                         <img src="./S7 Logo.png" alt="logo"/>
                     </div>
             </div>
             <div className="ticket__body">
-                            <div className="ticket__content-block">
+                            <div className="ticket__body-block">
                                 <div>
                                     <span>MOW – HKT</span>
                                     <span>10:45 – 08:00</span>
@@ -25,7 +25,7 @@ export default Ticket = () => {
                                 </div>                      
                             </div>
 
-                            <div className="ticket__content-block">
+                            <div className="ticket__body-block">
                                 <div>
                                     <span>MOW – HKT</span>
                                     <span>10:45 – 08:00</span>
@@ -43,3 +43,5 @@ export default Ticket = () => {
         </li>
     )
 }
+
+export default Ticket

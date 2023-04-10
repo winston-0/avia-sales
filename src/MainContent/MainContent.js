@@ -2,7 +2,7 @@ import React from "react";
 import TicketSorting from "../TicketSorting/TicketSorting";
 import TicketsList from "../TicketsList/TicketsList";
 
-export default MainContent = () => {
+ const MainContent = () => {
     return (
         <section className="avia-sales__main-content">
             <TicketSorting/>
@@ -11,3 +11,5 @@ export default MainContent = () => {
         </section>
     )
 }
+
+export default MainContent

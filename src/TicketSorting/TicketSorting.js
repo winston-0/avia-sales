@@ -1,11 +1,17 @@
 import React from "react";
+import SortButton from "../SortButton/SortButton";
+import { useSelector } from "react-redux";
 
-export default TicketSorting = () => {
+const TicketSorting = () => {
+   const ticketSortingState = useSelector(state => state.ticketSorting);
+   const buttons = ticketSortingState.map((item, index) => {
+        return <SortButton key={index} data={item}/>
+   })
     return (
-        <section classNamw="ticket-sorting">
-            <button className="ticket-sorting__button ticket-sorting__button--pressed">Самый дешевый</button>
-            <button className="ticket-sorting__button">Самый быстрый</button>
-            <button className="ticket-sorting__button">Оптимальный</button>
+        <section className="ticket-sorting">
+           {buttons}
         </section>
     )
 }
+
+export default TicketSorting

@@ -3,9 +3,22 @@
 @import './App/App.scss';
 @import './TicketSorting/TicketSorting.scss';
 @import './TicketsList/TicketsList.scss';
-@import './Ticket/Tickets.scss';
+@import './Ticket/Ticket.scss';
 @import './MainContent/show-more.scss';
+@import './MainContent/MainContent.scss';
 
 * {
     box-sizing: border-box;
+}
+body {
+    background-color: #F3F7FA;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: subpixel-antialiased
+}
+
+ul, li { margin-left: 0; padding-left: 0; }
+
+li {
+    list-style-type: none
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import Ticket from "../Ticket/Ticket";
 
-export default TicketList = () => {
+ const TicketList = () => {
     return (
         <ul className="tickets-list">
             <Ticket/>
@@ -9,3 +9,5 @@ export default TicketList = () => {
         </ul>
     )
 }
+
+export default TicketList
