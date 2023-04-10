@@ -1,0 +1,9 @@
+.avia-sales {
+    display: flex;
+    gap: 18px;
+    &__main-conten {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+}

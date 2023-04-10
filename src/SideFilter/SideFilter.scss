@@ -1,0 +1,45 @@
+.sideFilter {
+    background-color: white;
+    width: 232px;
+    height: 252px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    &__header {
+        margin: 0;
+        font-size: 12px;
+        color: #4a4a4a;
+        line-height: 12px;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    &__text {
+        color: #4A4A4A;
+        font-size: 13px;
+        line-height: 20px;
+    }
+    & .checkbox-span {
+        display: inline-block;
+        background-image: url(./Checkbox_un.svg);
+        width: 20px;
+        height: 20px;
+    }
+    & input {
+        appearance: none;
+        position: absolute;
+    }
+    & input:checked + .checkbox-span {
+        display: inline-block;
+        background-image: url(./Checkbox.svg);
+        width: 20px;
+        height: 20px;
+    }
+    & label {
+        display: flex;
+        gap: 10px;
+        align-items: end;
+    }
+}
