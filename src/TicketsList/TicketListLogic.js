@@ -9,14 +9,9 @@ const useTicketList = () => {
     const sideFilterState = useSelector(state => state.sideFilter)
     const sortingOptions = useSelector(state => state.ticketSorting)
     const amountOfTickets = useSelector(state => state.ticketsData.amountOfTickets)
+    
     const [visibleTickets, setVisibleTickets] = useState([]);
 
-    useEffect(() => {
-     if(!dataFetchingFulfilled) {
-        // console.log(ticketsData)
-        dispatch(fetchTickets())
-     }
-    }, [ticketsData, dataFetchingFulfilled])
 
     const filterTickets = (tickets, sideFilterState) => {
         const activeFilters = sideFilterState.filter(item => {
@@ -78,11 +73,28 @@ const useTicketList = () => {
             })
         }
     }
-    useEffect(() => {
-       let visibleTickets = filterTickets(ticketsData, sideFilterState);
+    const prepareVisibleTickets = () => {
+        let visibleTickets = filterTickets(ticketsData, sideFilterState);
        visibleTickets = sortTickets(visibleTickets, sortingOptions);
+       visibleTickets = visibleTickets.slice(0, amountOfTickets)
        setVisibleTickets(visibleTickets)
+    }
+
+    useEffect(() => {
+        if(!dataFetchingFulfilled) {
+           // console.log(ticketsData)
+           dispatch(fetchTickets())
+        }
+        
+        if(ticketsData.length !== 0) {
+            prepareVisibleTickets()
+        }
+       }, [ticketsData, dataFetchingFulfilled])
+    
+    useEffect(() => {
+       prepareVisibleTickets()
     }, [sideFilterState, sortingOptions, amountOfTickets])
+
     console.log(visibleTickets)
     return visibleTickets;
    

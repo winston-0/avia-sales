@@ -1,10 +1,22 @@
 import React from "react";
+import format from 'date-fns/format';
+import add from 'date-fns/add';
 
-const Ticket = () => {
+const Ticket = ({data}) => {
+    const formatedDate = (index) => {
+        let data = new Date(data.segments[index].date);
+        let secondData = add(data, {
+            minutes: data.segments[index].duration
+        })
+    const formateDuration = (index) => {
+
+    }
+        return format(secondData, 'HH:mm');
+    }
     return (
         <li className="ticket">
             <div className="ticket__head">
-                <span className="ticket__head-price">13 400 Р</span>
+                <span className="ticket__head-price">{data.price} Р</span>
                     <div className="ticket__head-logo">
                         <img src="./S7 Logo.png" alt="logo"/>
                     </div>
@@ -45,3 +57,15 @@ const Ticket = () => {
 }
 
 export default Ticket
+
+// .sort((a, b) => {
+//     let aD = 0;
+//     let bD = 0;
+//     for (let s of a.segments) {
+//       aD += s.duration;
+//     }
+//     for (let s of b.segments) {
+//       bD += s.duration;
+//     }
+//     return aD + a.price - (bD + b.price);
+//   });

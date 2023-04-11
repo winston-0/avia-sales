@@ -5,10 +5,12 @@ import useTicketList from "./TicketListLogic";
 
  const TicketList = () => {
     const tickets = useTicketList()
+    const VisibleTickets = tickets.map((item, index) => {
+        return <Ticket key={index} data={item}/>
+    })
     return (
         <ul className="tickets-list">
-            <Ticket/>
-            <Ticket/>
+            
         </ul>
     )
 }
