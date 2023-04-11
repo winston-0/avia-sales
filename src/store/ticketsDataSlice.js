@@ -6,15 +6,15 @@ const aviaSalesService = new aviaSalesApi();
 const initialState = {
     data: [],
     fulfilled: false,
+    amountOfTickets: 5
 }
 
-export const fetchTickets = createAsyncThunk('fetchTickets', async () => {
+export const fetchTickets = createAsyncThunk('fetchTickets', async function request() {    
     try {
         const response = await aviaSalesService.getTickets();
         return response
     } catch (error) {
-        const response = await aviaSalesService.getTickets();
-        return response
+        return request()
     }
 })
 
