@@ -28,6 +28,9 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        & div:nth-child(2) {
+          min-width: 56px;
+        }
     }
     &__body-block div {
         display: flex;

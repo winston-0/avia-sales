@@ -7,7 +7,6 @@ import TicketsList from "../TicketsList/TicketsList";
         <section className="avia-sales__main-content">
             <TicketSorting/>
             <TicketsList/>
-            <button className="show-more">Показать еще 5 билетов!</button>
         </section>
     )
 }

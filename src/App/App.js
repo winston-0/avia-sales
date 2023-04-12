@@ -4,6 +4,8 @@ import SideFilter from "../SideFilter/SideFilter";
 import MainContent from "../MainContent/MainContent";
 import store from "../store";
 import aviaSalesApi from "../aviaSalesApi/aviaSalesApi";
+import Logo from "../Logo/Logo";
+
 
 const aviaSalesService = new aviaSalesApi();
 
@@ -14,6 +16,7 @@ const App = () => {
     return (
         <Provider store={store}>
             <section className="avia-sales">
+                <Logo/>
                 <SideFilter/>
                 <MainContent/>
             </section>

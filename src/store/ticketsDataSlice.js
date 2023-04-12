@@ -6,7 +6,8 @@ const aviaSalesService = new aviaSalesApi();
 const initialState = {
     data: [],
     fulfilled: false,
-    amountOfTickets: 5
+    amountOfTickets: 5,
+    error: false
 }
 
 export const fetchTickets = createAsyncThunk('fetchTickets', async function request() {    
@@ -21,7 +22,11 @@ export const fetchTickets = createAsyncThunk('fetchTickets', async function requ
 const ticketsDataSlice = createSlice({
     name: 'ticketsData',
     initialState,
-    reducers: {},
+    reducers: {
+        showMore: (state, action) => {
+            state.amountOfTickets += 5
+        }
+    },
     extraReducers: (builder) => {
         builder.addCase(fetchTickets.fulfilled, (state, action) => {
             state.data.push(...action.payload.tickets);
@@ -29,10 +34,14 @@ const ticketsDataSlice = createSlice({
                 state.fulfilled = true
             }
         })
+        .addCase(fetchTickets.rejected, (state, action) => {
+            action.error = true
+        })
     }
 })
 
 export default ticketsDataSlice.reducer
+export const {showMore} = ticketsDataSlice.actions
 
 //сделать что бы при ошибке запрос отправлялся повтора некоторое кол-во раз
 //

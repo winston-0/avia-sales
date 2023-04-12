@@ -95,7 +95,7 @@ const useTicketList = () => {
        prepareVisibleTickets()
     }, [sideFilterState, sortingOptions, amountOfTickets])
 
-    console.log(visibleTickets)
+    // console.log(visibleTickets)
     return visibleTickets;
    
 }

@@ -4,13 +4,13 @@ const initialState = [
     {
         id: 'all',
         name: 'Все',
-        enabled: false
+        enabled: true
     },
     {
         id: 'noStop',
         name: 'Без пересадок',
         value: 0,
-        enabled: false
+        enabled: true
     },
     {
         id: 'oneStop',
@@ -22,13 +22,13 @@ const initialState = [
         id: 'twoStop',
         name: '2 пересадки',
         value: 2,
-        enabled: false
+        enabled: true
     },
     {
         id: 'threeStop',
         name: '3 пересадки',
         value: 3,
-        enabled: false
+        enabled: true
     }
 ]
 
