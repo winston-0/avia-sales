@@ -8,17 +8,21 @@
 @import './MainContent/MainContent.scss';
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 body {
-    background-color: #F3F7FA;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    -webkit-font-smoothing: subpixel-antialiased
+  background-color: #f3f7fa;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
-ul, li { margin-left: 0; padding-left: 0; }
+ul,
+li {
+  margin-left: 0;
+  padding-left: 0;
+}
 
 li {
-    list-style-type: none
+  list-style-type: none;
 }
